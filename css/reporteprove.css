@@ -1,0 +1,121 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.busqueda{
+    margin-top: -5rem;
+  }
+  
+  .search input[type=text]{
+    width:500px;
+    height:30px;
+    border-radius:1rem;
+    border: none;
+    margin-top: 15rem;
+    margin-left: -50rem;
+  }
+      
+  .search{
+    float:right;
+    margin:7px;
+    
+  }
+      
+  .search button{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    float: right;
+    padding: 8px 10px;
+    margin-right: 50rem;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15rem;
+    border-radius: 1rem;
+  
+  } 
+
+  .log-usua{
+    margin-top: 14rem;
+    margin-left: 30rem;
+  }
+
+
+
+
+.table, .th, .td{
+    border:solid black 1px ;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 15px;
+    background: #f2f2f2;
+}
+.table{
+    width: 70%;
+    height: 30rem;
+    margin-top: 2rem;
+    margin-left: 20rem;
+}
+
+.th{
+    background-color: #b4b4f3;
+}
+
+
+.buton{
+    margin-top: 5rem;
+    margin-left: 50rem;
+}
+
+.buton select{
+    border-radius: 5px;
+    background-color: #8c8cf0;
+    width: 20rem;
+    height: 3rem;
+    margin: 1rem;
+}
+
+.butons button{
+    border-radius: 5px;
+    background-color: #8c8cf0;
+    width: 20rem;
+    height: 3rem;
+    margin: 9rem;
+}
+
+.butons{
+    margin-left: 35rem;
+}
+
+.check{
+  margin-bottom: -2.3rem;
+}
+
+.boton-descargar{
+  margin-left: 70rem;
+  margin-top: 5rem;
+}
+
+.boton-descargar button{
+    background: #8c8cf0;
+    padding: 7px;
+    width: 100px;
+    border: 1px solid black;
+    color: black;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.boton-descargar button:hover{
+  background: #6565fa;
+}

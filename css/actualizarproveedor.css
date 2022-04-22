@@ -1,0 +1,259 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.busqueda{
+    margin-top: -5rem;
+  }
+  
+  .search input[type=text]{
+    width:500px;
+    height:30px;
+    border-radius:1rem;
+    border: none;
+    margin-top: 15rem;
+    margin-left: -50rem;
+  }
+      
+  .search{
+    float:right;
+    margin:7px;
+    
+  }
+      
+  .search button{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    float: right;
+    padding: 8px 10px;
+    margin-right: 50rem;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15rem;
+    border-radius: 1rem;
+  
+  } 
+
+
+  .log-usua{
+    margin-top: 14rem;
+    margin-left: 30rem;
+  }
+
+  /*Contenedor registrar*/
+
+  .contenedor-registrar{
+      border: solid black 1px;
+      position: absolute;
+      margin-left: 50rem;
+      width:  40%;
+      height: 48rem;
+    background: #CED3FB;
+      margin-top: 6rem ;
+      border-radius: 1rem;
+  }
+
+  .contenedor-registrar label{
+      font-size: 20px;
+      margin-left: 3rem;
+  }
+  h1{
+      text-align: center;
+  }
+  .select{
+      margin-left: 5rem;
+  }
+
+  .rol{
+      margin-right: rem;
+  }
+
+  .select h2{
+      margin-left: -2rem;
+      font-size: 1.9rem;
+  }
+ 
+.botons{
+    display: flex;
+    justify-content: center;
+}
+.cta{
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.botons button{
+    border-radius: 1rem;
+    background: #A9EDF4;
+    margin: 1rem;
+}
+  
+  .botons button:hover{
+    background: #76d7e2;
+  }
+
+  /*Modal*/
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: 'Roboto', sans-serif;
+   
+  }
+  
+  .salir{
+    display: inline-block;
+    text-decoration: none;
+    background: #8c8cf0;
+    padding: 7px;
+    width: 100px;
+    border: 1px solid #fff;
+    color: white;
+    font-size: 14px;
+    border-radius: 50px;
+    text-align: center;
+  }
+  
+  .salir:hover{
+    background: #6565fa;
+  }
+  
+  .cta{
+    font-size: 14px;
+    display: inline-block;
+    padding: 7px;
+    width: 100px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: #8c8cf0;
+  }
+  
+  .cta:hover{
+    background: #6565fa;
+  }
+  
+  .log{
+    margin-top: 3rem;
+  }
+  
+  
+  section{
+    height: 650px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 40px;
+  }
+  
+  section h2{
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  
+  
+  .modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal{
+    width: 40%;
+    height: 30%;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-evenly;
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+    border-radius: 10px;
+  }
+  
+  .close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .modal-close{
+    transform: translateY(-200%);
+  }
+  
+  @media screen and (max-width: 1000px){
+    section{
+        flex-direction: column-reverse;
+        align-content: center;
+        }
+        
+        .container-recuper{
+            text-align: center;
+        }
+  }
+  .actualizar{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .actualizar input{
+    margin-top: 20px;
+    width: 70%;
+  }
+  .actualizar label{
+    margin-top: 20px;
+  }
+  .select h2{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .proveedor{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+  }
+  .proveedor input{
+    margin-top: 20px;
+    width: 70%;
+  }
+  .proveedor label{
+    margin-top: 20px;
+    width: 70%;
+  }

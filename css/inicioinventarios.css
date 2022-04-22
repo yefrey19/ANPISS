@@ -1,0 +1,84 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.busqueda{
+    margin-top: -5rem;
+  }
+  
+  .search input[type=text]{
+    width:500px;
+    height:30px;
+    border-radius:1rem;
+    border: none;
+    margin-top: 15rem;
+    margin-left: -50rem;
+  }
+      
+  .search{
+    float:right;
+    margin:7px;
+    
+  }
+      
+  .search button{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    float: right;
+    padding: 8px 10px;
+    margin-right: 50rem;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15rem;
+    border-radius: 1rem;
+  
+  } 
+
+  .log-usua{
+    margin-top: 14rem;
+    margin-left: 30rem;
+  }
+
+
+.container-buton{
+    margin-top: 10rem;
+    margin-right: 1rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    grid-auto-rows: 70px;
+}
+
+.container-buton button{
+    height: 5rem;
+    width: 40rem;
+    margin-right: 55rem;
+    border-radius: 2rem;
+    background: #8c8cf0;
+    cursor: pointer;
+    
+}
+
+.buton{
+    height: 8.3rem;
+}
+
+.container-img img{
+    width: 6rem;
+    margin-top: 8px;
+    margin-left: 43rem;
+    margin-bottom: 3rem;  
+    border-radius: 1rem;
+    border: black solid 1px;
+}
+

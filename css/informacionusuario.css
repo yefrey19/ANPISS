@@ -1,0 +1,111 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  background:linear-gradient(#5695D5,#C1E3FF);
+    font-size: 1.5rem;
+    margin: 0px;
+}
+
+.busqueda{
+    margin-top: -5rem;
+  }
+  
+  .search input[type=text]{
+    width:500px;
+    height:30px;
+    border-radius:1rem;
+    border: none;
+    margin-top: 15rem;
+    margin-left: -50rem;
+  }
+      
+  .search{
+    float:right;
+    margin:7px;
+    
+  }
+      
+  .search button{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    float: right;
+    padding: 8px 10px;
+    margin-right: 50rem;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15rem;
+    border-radius: 1rem;
+  
+  } 
+
+  html, .bode{
+    background: linear-gradient(#5695D5,#C1E3FF);
+    height: 100%;
+  }
+
+
+  .log-usua{
+    margin-top: 14rem;
+    margin-left: 30rem;
+  }
+
+  h1{
+      font-size: 20px;
+      width:  70rem;
+      height: 6rem;  
+      top: -280px;
+      margin-bottom: -4rem;
+      text-align: center;
+  }
+
+h2{
+    text-align: center;
+    margin-right: 20rem;
+}
+
+.superior{
+  border: solid 1px;
+  background: #CED3FB; 
+  position: absolute;
+  margin-left: 40rem;
+  margin-top: 6rem;
+  height: 37rem;
+  border-radius: 1rem;
+}
+
+.logo-info{
+  margin-top: -5rem;
+  margin-left: 1rem;
+}
+
+.contenido-info{
+  margin-left: 5rem;
+ 
+}
+
+.boton-info{
+  margin-left: 40rem;
+  display: inline-block;
+}
+
+.boton-info button{
+  text-align: justify;
+  padding: 5px;
+  border-radius: 1rem;
+  background: #bebeff;
+}
+
+.boton-info button:hover{
+  background: #a2a2fa;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/registrarproveedor.css" rel="stylesheet">
+    <link rel="preload" href="css/normalize.css" as="styles">
+    <title>Registrarusuario</title>
+</head>
+<body>
+    <div class="busqueda">
+        <div class="search">
+            <form action="#">
+                <input type="text"
+                    placeholder=" Search Courses"
+                    name="search">
+                <button>
+                    <i class="fa fa-search"
+                        style="font-size: 18px;">
+                    </i>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+       <a href="proveedores.html" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="18" x2="9" y2="18" />
+            <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
+        </svg></a> 
+
+
+        <form class="formulario" id="formulario" name="formulario" action="registrar.php" method="post"> 
+        <div class="contenedor-registrar">
+            <div class="input">
+                <h1>Registrar Proveedor</h1>
+                
+                <div class="modiproveedor">
+                    <label >N° </label>
+                    <input type="text" name="nombres">
+                </div>
+
+                <div class="modiproveedor">
+                    <label >Nombre de la empresa: </label>
+                    <input type="text" name="nombres">
+                </div>
+                <div class="modiproveedor">
+                    <label >Direccion: </label>
+                    <input type="text" name="apellidos">
+                </div>
+                <div class="modiproveedor">
+                    <label >Telefono: </label>
+                    <input type="number" name="documento">
+                </div>
+                <div class="modiproveedor">
+                    <label >Correo: </label>
+                    <input type="email" name="correo">
+                </div>
+             </div>
+        <div class="lista">
+                     <h2>Productos que provee </h2>
+                     <br>
+                     <input type="checkbox" required="">
+                    <label>Granos </label>
+                     <br>
+                     <input type="checkbox" required="">
+                     <label>Carnes</label>
+                     <br>
+                    <input type="checkbox" required="">
+                    <label>Vegetales</label>
+                    <br>
+                     <input type="checkbox" required="">
+                    <label>Vegetales</label>
+                     <br>
+                     <input type="checkbox" required="">
+                     <label>Frutas</label>
+                     <br>
+                    <input type="checkbox" required="">
+                     <label>Pulpas</label>
+                    <br>
+                    <input type="checkbox" required="">
+                    <label>Tuberculo</label>
+                    <br>
+                    <input type="checkbox" required="">
+                    <label>Empaques</label>
+                    <br>
+                    <input type="checkbox" required="">
+                    <label>Carnicos</label>
+                    <br>
+
+                </div>
+    </form>
+
+        <div class="botons">
+            <input class="boton" type="submit" name="Guardar" value="Guardar">
+            <a href="proveedores.html" class="salir">Cancelar</a>
+        </div>
+    </div>
+    <section class="modal-container">
+        <div class="modal modal-close">
+            <p class="close"> X </p>
+			<div class="modal-textos">
+				<h2>Se registro corectamente el usuario</h2>
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="60" height="60" viewBox="0 0 24 24" stroke-width="3" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+					<circle cx="12" cy="12" r="9" />
+					<path d="M9 12l2 2l4 -4" />
+					</svg>
+			</div>
+        </div>
+    </section>
+
+</body>
+</html>

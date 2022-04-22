@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reporteusuarios</title>
+    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/reporteusuarios.css">
+</head>
+<body>
+    <div class="busqueda">
+        <div class="search">
+            <form action="#">
+                <input type="text"
+                    placeholder=" Search Courses"
+                    name="search">
+                <button>
+                    <i class="fa fa-search"
+                        style="font-size: 18px;">
+                    </i>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+       <a href="usuarios.html" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="18" x2="9" y2="18" />
+            <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
+        </svg></a> 
+      
+        <div class="row">
+            <div class="col-md-2 offset-md-5">
+                <label>Fecha:</label>
+                <input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/aaaa  hora" readonly>
+            </div>
+        </div>
+        <table class="table">
+            <tr class="tr">
+                <th class="th">N°</th>
+                <th class="th">Nombre de usuario</th>
+                <th class="th">Numero de documento</th>
+                <th class="th">Correo electronico</th>
+                <th class="th">Telefono</th>
+                <th class="th">Edad</th>
+                <th class="th">Cargo</th>
+                <th class="th">Estado</th>
+            </tr>
+
+
+            <tr class="tr">
+                <td class="td">1</td>
+                <td class="td">luz Mireya Moreno Bermudez</td>
+                <td class="td">23629983</td>
+                <td class="td">millo3627@gmail.com</td>
+                <td class="td">3162469856</td>
+                <td class="td">42 años</td>
+                <td class="td">Jefe de cocina</td>
+                <td class="td">Activo</td>
+            </tr>
+            
+            <tr class="tr">
+                <td class="td">2</td>
+                <td class="td">Jhony Rafael Borja Ortega</td>
+                <td class="td">11077665</td>
+                <td class="td">jhonyrafaelbotjaorteha@gmail.com</td>
+                <td class="td">3175870274</td>
+                <td class="td">45 años</td>
+                <td class="td">Administrador</td>
+                <td class="td">Activo</td>
+            </tr>
+            
+            <tr class="tr">
+                <td class="td">3</td>
+                <td class="td">Moises espitia</td>
+                <td class="td">11077665</td>
+                <td class="td">moisesespitia@gmail.com</td>
+                <td class="td">3175870274</td>
+                <td class="td">45 años</td>
+                <td class="td">Chef</td>
+                <td class="td">Activo</td>
+            </tr>
+        </table>   
+               
+        <div class="boton-descargar">
+            <button>Descargar</button>
+            </div>
+
+        <script src="javascript/jquery-3.3.1.min.js"></script>
+        <script src="javascript/bootstrap-datetimepicker.min.js"></script>
+        <script src="javascript/scripts.js"></script>
+    
+</body>
+</html>
