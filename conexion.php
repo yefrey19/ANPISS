@@ -4,9 +4,11 @@ function conn(){
     $host="localhost";
     $usuariodb="root";
     $pass="";
-    $dbname="anpiss";
+    $dbname="ANPISS";
 
     $conectar = mysqli_connect($host, $usuariodb, $pass, $dbname);
-    return $conectar;
+
+    mysqli_select_db($con,$db);
+    return $con;
 }
 ?>
