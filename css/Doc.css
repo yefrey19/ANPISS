@@ -293,3 +293,29 @@ font-size: 15px;
   border: none;
   border-radius: 5%;
 }
+
+.modal5 {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgb(0,0,0,0.5);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+}
+
+.modal0 {
+  width:30% ;
+  height: 70%;
+  background: #b4b4f3;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  position: relative;
+  transition: transform 1s;
+  transform: translateY(0%);
+}
