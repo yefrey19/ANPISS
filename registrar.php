@@ -1,29 +1,31 @@
-
-
 <?php
-include_once('conexion.php');
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-$nombres=$_POST['nombres'];
-$apellidos =$_POST['apellidos'];
-$documento =$_POST['documento'];
-$correo =$_POST['correo'];
-$telefono =$_POST['telefono'];
-$edad = $_POST['edad'];
-$cargo =$_POST['cargo'];
-$contraseña =$_POST['contraseña'];
-$conficontraseña =$_POST['conficontraseña'];
+include('conexion.php');
 
-echo "los datos son los siguientes: ";
-echo "$nombres,$apellidos,$documento,$correo,$telefono,$edad,$cargo,$contraseña,$conficontraseña";
+$nombre=$_POST['txtNombre'];
+$apellido=$_POST['txtApellido'];
+$documento=$_POST['txtDocumento'];
+$correo=$_POST['txtCorreo'];
+$telefono=$_POST['txtTelefono'];
+$edad=$_POST['txtEdad'];
+$cargo=$_POST['txtCargo'];
+$contraseña=$_POST['txtContraseña'];
+$conficontraseña=$_POST['txtConficontraseña'];
 
+$consulta="INSERT INTO `tblusuario`(`usNombre`, `usApellido`, `usDoc`, `usCorreo`, `usTel`, `usEdad`, `usCargo`, `usContraseña`, `usConficon`)
+VALUES ('$nombre', '$apellido', '$documento', '$correo', '$telefono', '$edad', '$cargo', '$contraseña', '$conficontraseña')";
 
-
-$conectar=conn();
-$sql="INSERT INTO tblusuario(nombres,apellidos,documento,correo,telefono,edad,cargo,contraseña,conficontraseña) 
-VALUES('$nombres','$apellidos','$documento','$correo','$telefono','$edad','$cargo','$contraseña','$conficontraseña')";
-
-$result = mysqli_query($conectar , $sql)or trigger_error("Query Failed! SQL- Error: ".mysqli_error($conectar), F_USER_ERROR);
+$resultado=mysqli_query($conexion,$consulta) or die("error de registro");
 
 echo '<script language="javascript">alert("El usuario se ha registrado correctamente"); window.location.href="registrarusu.html"</script>';
+
+
+mysqli_close($conexion);
+
+
+
+
 
 ?>

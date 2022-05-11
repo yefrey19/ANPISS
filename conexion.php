@@ -1,14 +1,5 @@
 <?php
-function conn(){
-    
-    $host="localhost";
-    $usuariodb="root";
-    $pass="";
-    $dbname="ANPISS";
 
-    $conectar = mysqli_connect($host, $usuariodb, $pass, $dbname);
+$conexion=mysqli_connect("localhost","root","","anpiss")or die("error conexion");
 
-    mysqli_select_db($con,$db);
-    return $con;
-}
 ?>
