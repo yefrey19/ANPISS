@@ -31,7 +31,7 @@ html{
 }
 
 body{
-  background:linear-gradient(#5695D5,#C1E3FF);
+    background:linear-gradient(#5695D5,#C1E3FF);
     font-size: 1.5rem;
     margin: 0px;
     height: 100vh;
@@ -452,6 +452,16 @@ border-radius: 1rem;
 
 /*Usuario*/
 
+.espacio-table{
+  padding: 11rem;
+}
+
+.btn{
+  background: #e63232;
+  border: solid black 1px;
+  padding: 5px;
+}
+
 .container-usua{
   width: 60%;
   padding-top: 1rem;
@@ -493,7 +503,7 @@ border-radius: 1rem;
 
 .botones-usua{
   margin-top: 2rem;
-  margin-left: 35rem;
+  margin-left: 65rem;
   height: 2rem;
 }
 

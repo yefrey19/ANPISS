@@ -1,10 +1,17 @@
 <?php
 
-include('conexion.php');
+require 'conexion.php';
 
-$ID=$_POST['txtID'];
-mysqli_query($conexion, "DELETE FROM tblusuario where usId='$ID'") or die("error al eliminar");
-mysqli_close($conexion);
+$db = new Database();
+$con = $db->conectar();
+
+$id = $_GET['id'];
+
+$query = $con->prepare("DELETE FROM tblusuario WHERE id=?");
+$query->execute([$id]);
+$numElimina = $query->rowCount();
+
 header("location:usuarios.php");
 
 ?>
+

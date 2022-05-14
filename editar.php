@@ -1,9 +1,23 @@
 <?php
-    include('conexion.php');
+
+require 'conexion.php';
+
+$db = new Database();
+$con = $db->conectar();
+
+$id = $_GET['id'];
+$activo = 1;
+
+$query = $con->prepare("SELECT * FROM tblusuario WHERE id = :id AND activo=:activo");
+$query->execute(['id' => $id, 'activo' => $activo]);
+$num = $query->rowCount();
+if ($num > 0) {
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+} else {
+    header("Location: usuarios.php");
+}
+
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +26,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/estilos.css">
+    <script src="public/js/bootstrap.bundle.min.js"></script>
     <link rel="preload" href="css/normalize.css" as="styles">
 </head>
 <body>
@@ -37,44 +53,65 @@
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="18" x2="9" y2="18" />
             <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
-        </svg></a> 
+        </svg></a>
+    <main class="contenedor">
+        <div class="p-3 rounded">
+            <div class="row">
+                <div class="col">
+                    <h4>Editar usuario</h4>
+                </div>
+            </div>
 
-<div class="botones-usua">
-    <div class="boton-usuario">
-        <a href="registrarusu.html"><button> Registrar usuario</button></a>
-    </div>
-</div>
-    <div class="espacio-table">
-        <table class="table">
-        <thead>
-            <tr>
-            <th >Nombre</th>
-            <th >Apellido</th>
-            <th >Acciones</th>
-            </tr>
-        </thead>
+            <div class="row">
+                <div class="col">
+                    <form class="row g-3" method="POST" action="guarda.php" autocomplete="off">
+                        <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+                        <div class="col-md-4">
+                            <label for="codigo" class="form-label">Nombre</label>
+                            <input type="text" id="codigo" name="nombre" class="form-control" value="<?php echo $row['nombre']; ?>" required autofocus>
+                        </div>
 
-<?php
-    $sql="SELECT FROM usuarios";
-    $result=mysqli_query($conexion, $sql);
-    while($mostrar=mysqli_fetch_array($result)){
+                        <div class="col-md-4">
+                            <label for="descripcion" class="form-label">Apellido</label>
+                            <input type="text" id="descripcion" name="apellido" class="form-control" value="<?php echo $row['apellido']; ?>" required>
+                        </div>
 
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label">Documento</label>
+                            <input type="number" id="stock" name="documento" value="<?php echo $row['documento']; ?>" class="form-control">
+                        </div>
 
-    
-?>
+                        <div class="col-md-4">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="email" id="correo" name="correo" value="<?php echo $row['correo']; ?>" class="form-control">
+                        </div>
 
-        <tbody>
-        <form action="">
-            <input type="text" value="<?php echo $mostrar['usId'] ?>" name="txtID">
-            <input type="text" value="<?php echo $mostrar['usId'] ?>" name="txtID">
-            <input type="text" value="<?php echo $mostrar['usId'] ?>" name="txtID">
-            <input type="text" value="<?php echo $mostrar['usId'] ?>" name="txtID">
-        </form>
-            <?php
-    }
-            ?>
-        </tbody>
-    </div>
-</table>
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label">Telefono</label>
+                            <input type="number" id="stock" name="telefono" value="<?php echo $row['telefono']; ?>" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label">Edad</label>
+                            <input type="number" id="stock" name="edad" value="<?php echo $row['edad']; ?>" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label">Cargo</label>
+                            <input type="text" id="stock" name="cargo" value="<?php echo $row['cargo']; ?>" class="form-control" require>
+                        </div>
+
+                        <div class="col-md-12">
+                            <a class="btn btn-secondary" href="usuarios.php">Regresar</a>
+                            <button type="submit" class="btn btn-primary" name="registro">Guardar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
 </body>
+
 </html>

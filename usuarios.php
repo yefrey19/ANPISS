@@ -1,10 +1,17 @@
 <?php
-    include('conexion.php');
+
+require 'conexion.php';
+
+$db = new Database();
+$con = $db->conectar();
+
+$activo = 1;
+
+$comando = $con->prepare("SELECT * FROM tblusuario WHERE activo=:mi_activo ORDER BY id ASC");
+$comando->execute(['mi_activo' => $activo]);
+$resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +19,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/estilos.css">
+    <script src="public/js/bootstrap.bundle.min.js"></script>
     <link rel="preload" href="css/normalize.css" as="styles">
 </head>
 <body>
@@ -39,50 +48,45 @@
             <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
         </svg></a> 
 
-<div class="botones-usua">
-    <div class="boton-usuario">
-        <a href="registrarusu.html"><button> Registrar usuario</button></a>
-    </div>
-</div>
-    <div class="espacio-table">
-        <table class="table">
-        <thead>
-            <tr>
-            <th>ID</th>
-            <th >Nombre</th>
-            <th >Apellido</th>
-            <th >Acciones</th>
-            </tr>
-        </thead>
+        <main class="contenedor">
+        <div class="p-3 rounded">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Informacion usuarios</h4>
+                        <a href="registrarusu.html" class="btn btn-primary aling">Nuevo Usuario</a>
+                    
+                </div>
+            </div>
 
-<?php
-    $sql="SELECT * FROM tblusuario";
-    $result= mysqli_query($conexion, $sql);
+            <div class="row py-3">
+                <div class="col">
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>Nombre Apellidos</th>
+                                <th>telefono</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
 
-    while($mostrar = mysqli_fetch_array($result)){
+                        <tbody>
+                            <?php
+                            foreach ($resultado as $row) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row['nombre']; ?>
+                                    <?php echo $row['apellido']; ?></td>
+                                    <td><?php echo $row['telefono']; ?></td>
+                                    <td><a href="editar.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
+                                    <a href="eliminar.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    
-?>
-
-        <tbody>
-            <tr>
-            <td><?php echo $mostrar['usId']?></td>
-            <td><?php echo $mostrar['usNombre']?></td>
-            <td><?php echo $mostrar['usApellido']?></td>
-            <td>
-                <a href="editar.php">Editar</a>
-                <form action="eliminar.php" method="POST">  
-                    <input type="hidden" value="<?php echo $mostrar['usId']?>" name="txtID"readonly>  
-                    <input class="btn" type="submit" value="ELIMINAR" name="btnELIMINAR">
-                </form>
-            </td>
-            </tr>
-
-            <?php
-    }
-            ?>
-        </tbody>
-    </div>
-</table>
 </body>
 </html>
