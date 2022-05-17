@@ -58,7 +58,7 @@ if ($num > 0) {
         <div class="p-3 rounded">
             <div class="row">
                 <div class="col">
-                    <h4>Editar usuario</h4>
+                    <h4>𝐄𝐝𝐢𝐭𝐚𝐫 𝐮𝐬𝐮𝐚𝐫𝐢𝐨</h4>
                 </div>
             </div>
 

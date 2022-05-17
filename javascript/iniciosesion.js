@@ -29,3 +29,12 @@
   }
   mision("Somos una Asociación líder en ofrecer mejores condiciones de vida para el Pensionado y el Adulto Mayor, fundamentando nuestras acciones en los valores especiales del ser humano.",80,Mision)
   vision("ANPISS reafirmará su liderazgo social en el país, mejorando las expectativas de los asociados, en busca de la excelencia, comprometiéndonos todos al desarrollo integral del equipo humano, aumentando nuestro recurso humano asociado cada año, convirtiéndonos en una verdadera fuerza dinámica que recupere la dignidad del Pensionado Colombiano.",40,Vision)
+	
+  function abrirform() {
+    document.getElementById("formrecuperar").style.display = "block";
+    
+  }
+  
+  function cancelarform() {
+    document.getElementById("formrecuperar").style.display = "none";
+  }

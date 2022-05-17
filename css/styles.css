@@ -171,83 +171,194 @@ h1{
 }
 
 /*ingresar*/
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: sans-serif;
 
-*{
-    padding: 0;
-    box-sizing: border-box;
-  }
+}
+
+
+h1
+{
+	font-size:40px;
+}
+
+.contenedor-formulario{
+  background-color: white;
+  height: 45rem;
+  width: 50rem;
+  margin-left: 30rem;
+  margin-right: 20rem;
+  margin-top: 15rem;
+  border-radius: 3rem;
+  border: #0d0d0e solid 2px;
   
-  body {
-    font-family: arial;
-    height: 100vh;
-  }
+ 
   
-  .form-login {
+}
+
+#frmlogin{
+  right: 10rem; 
+  margin-top: 5rem;
+}
+
+.mision{
+  margin-top: -10rem;
+  width: 80rem;
+}
+.formulariocaja
+{
     width: 400px;
-    height: 340px;
-    background: #ecf1f1;
+    height: 500px;
+    position: relative;
     margin: auto;
-    margin-left: 18rem;
-    margin-top: 180px;
-    box-shadow: 7px 13px 37px rgb(12, 12, 12);
-    padding: 20px 30px; 
-    color: rgb(240, 236, 236);
-  }
-  
-  .form-login h5 {
-    margin: 0;
+    background: white;
+    padding: 2px;
+    margin-right: 8rem;
+ 
+}
+
+
+#btnvai{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 130px;
+    height: 100%;
+	background-color: #1C62C1;
+    border-radius: 30px;
+	transition: .5s;
+	
+}
+.logovai
+{
     text-align: center;
-    height: 40px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid;
-    font-size: 20px;
-  }
-  
-  .controls {
+}
+.logovai img
+{
+    width: 120px;
+}
+.grupo-entradas{
+    position: relative;
+    width: 280px;
+    transition: .5s;
+    margin-left: 20rem;
+    margin-top: 15rem;  
+}
+.cajaentradatexto{
     width: 100%;
-    border: 1px solid #017bab;
-    margin-bottom: 15px;
-    padding: 11px 10px;
-    background: #b0d5df;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .buttons {
+    padding: 8px 10px;
+    margin: 10px 0 10px 0;
+	font-size:16px;
+	border-radius:5px;
+	border:1px solid black;
+  background-color: #b0d5df;
+	
+}
+.botonenviar{
     width: 100%;
-    height: 40px;
-    background: #456b37;
-    border: none;
-    color: white;
-    margin-bottom: 16px;
-    border-radius: 1rem;
-    
-  }
-  
-  .buttons:hover{
+    padding: 10px 30px;
     cursor: pointer;
-  }
-  .form-login p{
+    display: block;
+    margin: auto;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+	border:1px solid black;
+	font-size:16px;
+	color:rgb(46, 37, 37);
+	background-color: #5eba3d;
+	
+	
+}
+.checkboxvai{
+    margin: 5px 10px 24px 0;
+	text-align:right;
+	font-size:12px;
+}
+
+
+
+.caja_popup 
+{
+	display: none;
+    position: absolute;
+	padding:0;
+	background-color:rgba(0, 0, 0, 0.5);
+	width:100%;
+	height:100%;
+}
+.contenedor_popup 
+{
+	border-radius: 5px;
+	top: 10%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	width:400px;
+	border-radius: 5px;
+	transition: all 0.2s;
+	
+	
+}
+a
+{
+	text-decoration-line: underline;
+	cursor:pointer;
+}
+table
+{
+	text-align:center;
+    width: 98%;
+    border-collapse: collapse;
+    border: 3px solid black;
+	margin:50px auto;
+    background: white;
+	
+	
+}
+th 
+{
+    background: steelblue;
     height: 40px;
-    text-align: center;
-    
-  }
-  
-  .form-login a {
-    color: rgb(5, 5, 5);
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .form-login a:hover {
-    text-decoration: underline;
-  }
-  .form-login h3{
-      color:#456b37 ;
-      text-align: center;
-      font-size: 4rem;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+    font-weight: lighter;
+    text-shadow: 0 1px 0 #38678f;
+    color: white;
+    border: 1px solid #38678f;
+    box-shadow: inset 0px 1px 2px #568ebd;
+    transition: all 0.2s;
+	font-size: 18px;
+
+}
+tr 
+{
+    border-bottom: 1px solid #cccccc;
+	width:100%;
+}
+td 
+{
+    border: 1px solid #cccccc;
+    padding: 10px;
+    transition: all 0.2s;
+	font-size: 14px;
+}
+.txtrecuperar
+{
+	font-size: 14px;
+	text-align:center;
+	width: 100px;
+	display: inline-block;
+	background-color: #1C62C1;
+	padding: 6px 10px;
+	border-radius:5px;
+
+	color:white;
+	border:1px solid black;
+	cursor:pointer;
+}
 /* estilos de la imagen*/
 .imgen{
     width: 5rem;
