@@ -209,16 +209,16 @@ h1
   margin-top: -10rem;
   width: 80rem;
 }
-.formulariocaja
-{
+.formulariocaja{
     width: 400px;
     height: 500px;
     position: relative;
+    height: 390px;
+    background: #ecf1f1;
     margin: auto;
     background: white;
     padding: 2px;
     margin-right: 8rem;
- 
 }
 
 

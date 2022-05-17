@@ -42,3 +42,16 @@ h4{
 .form-label{
     font-size: 2rem;
 }
+
+.form-control{
+    border-radius: 2rem;
+}
+
+.colum-2{
+    display: flex;
+    justify-content: center;
+}
+
+.boton{
+    margin-left: 50px;
+}
