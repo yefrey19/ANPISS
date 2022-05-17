@@ -8,7 +8,7 @@ $con = $db->conectar();
 $id = $_GET['id'];
 $activo = 1;
 
-$query = $con->prepare("SELECT * FROM tblusuario WHERE id = :id AND activo=:activo");
+$query = $con->prepare("SELECT * FROM tblempleado WHERE id = :id AND activo=:activo");
 $query->execute(['id' => $id, 'activo' => $activo]);
 $num = $query->rowCount();
 if ($num > 0) {
@@ -48,7 +48,7 @@ if ($num > 0) {
         </div>
     </div>
     
-       <a href="usuarios.php" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+       <a href="empleado.php" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="18" x2="9" y2="18" />
@@ -102,7 +102,7 @@ if ($num > 0) {
                         </div>
 
                         <div class="col-md-12">
-                            <a class="btn btn-secondary" href="usuarios.php">Regresar</a>
+                            <a class="btn btn-secondary" href="empleado.php">Regresar</a>
                         </div>
 
                     </form>
