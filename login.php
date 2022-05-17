@@ -12,7 +12,7 @@ $nr 		= mysqli_num_rows($queryusuario);
 	
 if ($nr == 1)  
 	{ 
-	echo	"<script> alert('Usuario logueado.');window.location= 'home.html' </script>";
+	echo	"<script>window.location= 'home.html' </script>";
 	}
 else
 	{
