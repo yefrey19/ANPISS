@@ -4,6 +4,13 @@
     margin-top: 5rem;
 }
 
+.contenedor-1{
+    background-color: aliceblue;
+    border-radius:  1rem;
+    border: solid black 1px;
+    width: 30%;
+}
+
 .float-right {
     float: right;
 }
@@ -54,4 +61,12 @@ h4{
 
 .boton{
     margin-left: 50px;
+}
+
+.row-1{
+    margin-top: 3rem;
+}
+
+.col-1{
+    margin-left: 18rem;
 }

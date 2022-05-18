@@ -54,55 +54,44 @@ if ($num > 0) {
             <line x1="4" y1="18" x2="9" y2="18" />
             <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
         </svg></a>
-    <main class="contenedor">
+    <main class="contenedor contenedor-1">
         <div class="p-3 rounded">
             <div class="row">
                 <div class="col">
-                    <h4>Editar usuario</h4>
+                    <h4>Informacion de usuario</h4>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row row-1">
                 <div class="col">
                     <form class="row g-3" method="POST" action="" autocomplete="off">
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-                        <div class="col-md-4">
-                            <label for="codigo" class="form-label">Nombre</label>
-                            <input type="text" id="codigo" name="nombre" class="form-control" value="<?php echo $row['nombre']; ?>" readonly>
+                        <div class="">
+                            <h2 id="codigo" name="nombre">Nombres y Apellidos: <?php echo $row['nombre']; ?> <?php echo $row['apellido']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="descripcion" class="form-label">Apellido</label>
-                            <input type="text" id="descripcion" name="apellido" class="form-control" value="<?php echo $row['apellido']; ?>" readonly>
+                        <div>
+                            <h2 id="stock" name="documento">Documento: <?php echo $row['documento']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Documento</label>
-                            <input type="number" id="stock" name="documento" value="<?php echo $row['documento']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="documento">Correo: <?php echo $row['correo']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="correo" class="form-label">Correo</label>
-                            <input type="email" id="correo" name="correo" value="<?php echo $row['correo']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="documento">Telefono: <?php echo $row['telefono']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Telefono</label>
-                            <input type="number" id="stock" name="telefono" value="<?php echo $row['telefono']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="documento">Edad: <?php echo $row['edad']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Edad</label>
-                            <input type="number" id="stock" name="edad" value="<?php echo $row['edad']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="documento">Cargo: <?php echo $row['cargo']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Cargo</label>
-                            <input type="text" id="stock" name="cargo" value="<?php echo $row['cargo']; ?>" class="form-control" readonly>
-                        </div>
-
-                        <div class="col-md-12">
-                            <a class="btn btn-secondary" href="usuarios.php">Regresar</a>
+                        <div class="col-md-12 col-1">
+                            <a class="btn btn-secondary btn-1" href="usuarios.php">Regresar</a>
                         </div>
 
                     </form>
