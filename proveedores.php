@@ -7,7 +7,7 @@ $con = $db->conectar();
 
 $activo = 1;
 
-$comando = $con->prepare("SELECT * FROM tblusuario WHERE activo=:mi_activo ORDER BY id ASC");
+$comando = $con->prepare("SELECT * FROM tblproveedor WHERE activo=:mi_activo ORDER BY id ASC");
 $comando->execute(['mi_activo' => $activo]);
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
@@ -52,10 +52,9 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <div class="p-3 rounded">
             <div class="row">
                 <div class="col-12">
-                    <h4>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢ó𝐧 𝐮𝐬𝐮𝐚𝐫𝐢𝐨𝐬</h4>
+                    <h4>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢ó𝐧 𝐩𝐫𝐨𝐯𝐞𝐞𝐝𝐨𝐫𝐞𝐬</h4>
                         <div class="colum-2">
-                            <a href="registrarusu.html" class="btn boton btn-primary aling">Nuevo Usuario</a>
-                            <a href="empleado.php" class="btn boton btn-primary aling" >Empleado</a>
+                            <a href="registrarproveedor.html" class="btn boton btn-primary aling">Registrar proveedor</a>
                         </div>
                 </div>
             </div>
@@ -65,8 +64,11 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                     <table >
                         <thead>
                             <tr>
-                                <th>Nombre Apellidos</th>
-                                <th>Cargo</th>
+    
+                                <th>Nombre de empresa</th>
+                                <th>Dirección</th>
+                                <th>Correo</th>
+                                <th>Telefono</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -76,21 +78,22 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($resultado as $row) {
                             ?>
                                 <tr>
-                                    <td><?php echo $row['nombre']; ?>
-                                    <?php echo $row['apellido']; ?></td>
-                                    <td><?php echo $row['cargo']; ?></td>
-                                    <td><a href="ver.php?id=<?php echo $row['id']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td><?php echo $row['direccion']; ?></td>
+                                    <td><?php echo $row['correo']; ?></td>
+                                    <td><?php echo $row['telefono']; ?></td>
+                                    <td><a href="verproveedor.php?id=<?php echo $row['id']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                                         <circle cx="12" cy="12" r="2" />
                                                                                         <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
                                                                                         </svg></a>
-                                    <a href="editar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#7f5345" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <a href="editarproveedor.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#7f5345" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                                     <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
                                                                                     <path d="M16 5l3 3" />
                                                                                     <path d="M9 7.07a7.002 7.002 0 0 0 1 13.93a7.002 7.002 0 0 0 6.929 -5.999" />
                                                                                     </svg>
-                                    <a href="eliminar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <a href="eliminarproveedor.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                                         <line x1="4" y1="7" x2="20" y2="7" />
                                                                                         <line x1="10" y1="11" x2="10" y2="17" />

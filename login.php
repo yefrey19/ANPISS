@@ -12,7 +12,11 @@ $nr 		= mysqli_num_rows($queryusuario);
 	
 if ($nr == 1)  
 	{ 
+<<<<<<< HEAD
 	echo	"<script> window.location= 'home.html' </script>";
+=======
+	echo	"<script>window.location= 'home.html' </script>";
+>>>>>>> 8400a9be77f267e54806f0d8d7e4df8c94c80442
 	}
 else
 	{
