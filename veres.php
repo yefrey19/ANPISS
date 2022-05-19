@@ -5,9 +5,17 @@ require 'conexion.php';
 $db = new Database();
 $con = $db->conectar();
 
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
+$id = $_GET['id'];
+$activo = 1;
 
-$resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
+$query = $con->prepare("SELECT * FROM tblusuario WHERE id = :id AND activo=:activo");
+$query->execute(['id' => $id, 'activo' => $activo]);
+$num = $query->rowCount();
+if ($num > 0) {
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+} else {
+    header("Location: Docrestaurante.php");
+}
 
 ?>
 
@@ -50,7 +58,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <div class="p-3 rounded">
             <div class="row">
                 <div class="col">
-                    <h4>Informacion de usuario</h4>
+                    <h4></h4>
                 </div>
             </div>
 
@@ -91,15 +99,11 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <div>
-                            <h2 id="stock" name="documento">Puertas: <?php echo $row['puertas']; ?></h2>
+                            <h2 id="stock" name="documento">Campanas: <?php echo $row['campanas']; ?></h2>
                         </div>
 
                         <div>
-                            <h2 id="stock" name="documento">Mesas: <?php echo $row['mesas']; ?></h2>
-                        </div>
-
-                        <div>
-                            <h2 id="stock" name="documento">Sillas: <?php echo $row['sillas']; ?></h2>
+                            <h2 id="stock" name="documento">Neveras: <?php echo $row['neveras']; ?></h2>
                         </div>
 
                         <div>
@@ -115,7 +119,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <div class="col-md-12 col-1">
-                            <a class="btn btn-secondary btn-1" href="DocLimpieza.php">Regresar</a>
+                            <a class="btn btn-secondary btn-1" href="Docrestaurante.php">Regresar</a>
                         </div>
 
                     </form>
