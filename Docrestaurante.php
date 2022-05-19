@@ -7,15 +7,9 @@ $con = $db->conectar();
 
 $comando = $con->prepare("SELECT * FROM tbllimpieza ");
 
-<<<<<<< HEAD
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
-=======
->>>>>>> d4eecb60679e9be396e8e0a8d37bec0fbc7c3f73
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,9 +65,8 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <th>Pisos</th>
         <th>Paredes</th>
         <th>Estufas</th>
-        <th>Puertas</th>
-        <th>Mesas</th>
-        <th>Sillas</th>
+        <th>Campanas</th>
+        <th>Neveras</th>
         <th>Techos</th>
         <th>Observaciones</th>
         <th>Id</th>
@@ -96,8 +89,8 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                                     <td><?php echo $row['Estufas']; ?></td>
                                     <td><?php echo $row['Puertas']; ?></td>
                                     <td><?php echo $row['Estufas']; ?></td>
-                                    <td><?php echo $row['Mesas']; ?></td>
-                                    <td><?php echo $row['Sillas']; ?></td>
+                                    <td><?php echo $row['Campanas']; ?></td>
+                                    <td><?php echo $row['Neveras']; ?></td>
                                     <td><?php echo $row['techos']; ?></td>
                                     <td><?php echo $row['Observaciones']; ?></td>
                                     <td><?php echo $row['Id']; ?></td>
@@ -120,18 +113,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                             <?php } ?>
                         </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -187,28 +168,18 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
      </div>
 
      <div class="Limpieza">
-     <label for="puertas">Puertas</label>
+     <label for="puertas">Campanas</label>
        <input type="text" id="puertas" name="puertas">
      </div>
 
      <div class="Limpieza">
-     <label for="mesas">Mesas</label>
+     <label for="mesas">Neveras</label>
        <input type="text" id="mesas" name="mesas">
      </div>
 
      <div class="Limpieza">
-     <label for="sillas">Sillas</label>
+     <label for="sillas">Techos</label>
        <input type="text" id="sillas" name="sillas">
-     </div>
-
-     <div class="Limpieza">
-     <label for="ventiladores">Ventiladores</label>
-       <input type="text" id="ventiladores" name="ventiladores">
-     </div>
-
-     <div class="Limpieza">
-     <label for="techos">Techos</label>
-       <input type="text" id="techos" name="techos">
      </div>
 
      <div class="Limpieza">
