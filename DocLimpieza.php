@@ -5,10 +5,8 @@ require 'conexion.php';
 $db = new Database();
 $con = $db->conectar();
 
-$activo = 1;
+$comando = $con->prepare("SELECT * FROM tbllimpieza ");
 
-$comando = $con->prepare("SELECT * FROM tbllimpieza WHERE activo=:mi_activo ORDER BY id ASC");
-$comando->execute(['mi_activo' => $activo]);
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -69,12 +67,12 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <th>Pisos</th>
         <th>Paredes</th>
         <th>Estufas</th>
-        <th>Campanas estractoras</th>
-        <th>Nevera</th>
+        <th>Puertas</th>
+        <th>Mesas</th>
+        <th>Sillas</th>
         <th>Techos</th>
-        <th>Elaboro</th>
-        <th>Supervisor</th>
         <th>Observaciones</th>
+        <th>Id</th>
         <th>opciones</th>
     </tr>
 
@@ -92,12 +90,14 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                                     <td><?php echo $row['Pisos']; ?></td>
                                     <td><?php echo $row['Paredes']; ?></td>
                                     <td><?php echo $row['Estufas']; ?></td>
-                                    <td><?php echo $row['Campanas estractoras']; ?></td>
-                                    <td><?php echo $row['Nevera']; ?></td>
-                                    <td><?php echo $row['Techos']; ?></td>
-                                    <td><?php echo $row['Elaborado']; ?></td>
-                                    <td><?php echo $row['Supervisor']; ?></td>
+                                    <td><?php echo $row['Puertas']; ?></td>
+                                    <td><?php echo $row['Estufas']; ?></td>
+                                    <td><?php echo $row['Mesas']; ?></td>
+                                    <td><?php echo $row['Sillas']; ?></td>
+                                    <td><?php echo $row['techos']; ?></td>
                                     <td><?php echo $row['Observaciones']; ?></td>
+                                    <td><?php echo $row['Id']; ?></td>
+                                    
                                     
                         
                                     <td><a href="ver.php?id=<?php echo $row['id']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
