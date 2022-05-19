@@ -7,11 +7,11 @@ $con = $db->conectar();
 
 $id = $_GET['id'];
 
-$query = $con->prepare("DELETE FROM tblusuario WHERE id=?");
+$query = $con->prepare("DELETE FROM tblempleado WHERE id=?");
 $query->execute([$id]);
 $numElimina = $query->rowCount();
 
-header("location:usuarios.php");
+header("location:empleado.php");
 
 ?>
 

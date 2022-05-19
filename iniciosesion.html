@@ -12,7 +12,7 @@
 </head>
 <body>     
     <div class="contact-wrapper sign-in" >
-        <div>
+        <div class="mision">
             <img src="img/Logo.png">
             <h2 class="campo">Mision</h2>
             <p class="mision-vision"> 
@@ -23,29 +23,38 @@
                <span id="vision"> </span>
             </p>
         </div>
+<div class="contenedor-formulario">
+        <form id="frmlogin" class="grupo-entradas" method="POST" action="login.php">
+            <div class="logovai"><img src="img/logo.png"></div>
+            <b>&#128231; Correo</b>
+            <input type="email" class="cajaentradatexto" name="txtcorreo" required>
+            <b>&#128274; Contraseña</b>
+            <input type="password" class="cajaentradatexto" name="txtpassword" required>
+            <div class="checkboxvai"><a onclick="abrirform()">Recuperar contraseña</a></div>
+            <button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>
+            </form>
+</div>
 
-            <section class="form-login" id="formulario">
-                <h3>Login</h3>
-                <div class="imgen">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="60" height="80" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
-                  </svg>
-                </div>
-                <input class="controls" type="text" required="" value="" placeholder="Usuario" id="txtCorreo">
-                <input class="controls" type="password" required="" value="" placeholder="Contraseña" id="txtContrasenna">
-                <input class="buttons" type="submit" name="" value="Ingresar" id="btnIngresar">
-                <p><a href="recuperar.html">¿Olvidastes tu Contraseña?</a></p>
-          
-              </section>
-            </div>
+<div class="caja_popup" id="formrecuperar">
+    <form action="recuperar.php" class="contenedor_popup" method="POST">
+          <table>
+          <tr><th colspan="2">Recuperar contraseña</th></tr>
+              <tr> 
+                  <td><b>&#128231; Correo</b></td>
+                  <td><input type="email" name="txtcorreo" required class="cajaentradatexto"></td>
+              </tr>
+              <tr> 	
+                 <td colspan="2">
+                     <button type="button" onclick="cancelarform()" class="txtrecuperar">Cancelar</button>
+                     <input class="txtrecuperar" type="submit" name="btnrecuperar" value="Enviar" onClick="javascript: return confirm('¿Deseas enviar tu contraseña a tu correo?');">
+              </td>
+              </tr>
+          </table>
+      </form>
+      </div>
         </div>
         <script src="javascript/iniciosesion.js"></script>
-        <script src="javascript/logicaNegociosUsuarios.js"></script>
-        <script src="javascript/logicaInterfazInicioSesion.js"></script>
+        
 </body>
 </html>
 
