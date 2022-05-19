@@ -8,12 +8,12 @@ $nr 			= mysqli_num_rows($queryusuario);
 if ($nr == 1)
 {
 $mostrar		= mysqli_fetch_array($queryusuario); 
-$enviarpass 	= $mostrar['pass'];
+$enviarpass 	= $mostrar['contraseña'];
 
 $paracorreo 		= $correo;
 $titulo				= "Recuperar contraseña";
 $mensaje			= $enviarpass;
-$tucorreo			= "From:caborja621@misena.edu.co";
+$tucorreo			= "From:ypena988@misena.edu.co";
 
 if(mail($paracorreo,$titulo,$mensaje,$tucorreo))
 {
