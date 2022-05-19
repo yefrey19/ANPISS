@@ -7,8 +7,7 @@ $con = $db->conectar();
 
 $activo = 1;
 
-$comando = $con->prepare("SELECT * FROM tbllimpieza WHERE activo=:mi_activo ORDER BY id ASC");
-$comando->execute(['mi_activo' => $activo]);
+$comando = $con->prepare("SELECT * FROM tbllimpieza ");
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
