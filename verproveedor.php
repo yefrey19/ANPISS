@@ -54,7 +54,7 @@ if ($num > 0) {
             <line x1="4" y1="18" x2="9" y2="18" />
             <path d="M4 12h13a3 3 0 0 1 0 6h-4l2 -2m0 4l-2 -2" />
         </svg></a>
-    <main class="contenedor">
+    <main class="contenedor contenedor-1">
         <div class="p-3 rounded">
             <div class="row">
                 <div class="col">
@@ -62,33 +62,33 @@ if ($num > 0) {
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row row-1">
                 <div class="col">
                     <form class="row g-3" method="POST" action="" autocomplete="off">
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-                        <div class="col-md-4">
-                            <label for="codigo" class="form-label">Nombre empresa</label>
-                            <input type="text" id="codigo" name="nombre" class="form-control" value="<?php echo $row['nombre']; ?>" readonly>
+
+                       
+                        <div>
+                            <h2 id="stock" name="nombre"> Nombre de empresa: <?php echo $row['nombre']; ?></h2>
                         </div>
 
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Direccion</label>
-                            <input type="number" id="stock" name="direccion" value="<?php echo $row['direccion']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="direccion"> Direccion: <?php echo $row['direccion']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="correo" class="form-label">Correo</label>
-                            <input type="email" id="correo" name="correo" value="<?php echo $row['correo']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="correo"> Correo: <?php echo $row['correo']; ?></h2>
                         </div>
 
-                        <div class="col-md-4">
-                            <label for="stock" class="form-label">Telefono</label>
-                            <input type="number" id="stock" name="telefono" value="<?php echo $row['telefono']; ?>" class="form-control" readonly>
+                        <div>
+                            <h2 id="stock" name="telefono"> Telefono: <?php echo $row['telefono']; ?></h2>
                         </div>
 
+                      
 
-                        <div class="col-md-12">
+
+                        <div class="col-md-12 col-1">
                             <a class="btn btn-secondary" href="proveedores.php">Regresar</a>
                         </div>
 
