@@ -6,11 +6,9 @@ $db = new Database();
 $con = $db->conectar();
 
 $comando = $con->prepare("SELECT * FROM tbllimpieza ");
-
-<<<<<<< HEAD
 $comando = $con->prepare("SELECT * FROM tbllimpieza ");
-=======
->>>>>>> d4eecb60679e9be396e8e0a8d37bec0fbc7c3f73
+
+
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
