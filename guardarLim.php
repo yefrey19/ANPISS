@@ -24,7 +24,7 @@ if (isset($_POST['id'])) {
     $observaciones = $_POST['observaciones'];
 
     $query = $con->prepare("UPDATE tbllimpieza SET limpieza=?, desinfeccion=?, nombre=?, choque=?, pisos=?, paredes=?, estufas=?, puertas=?, mesas=?, sillas=?, ventiladores=?, techos=?, observaciones=?, WHERE id=?");
-    $resultado = $query->execute(array( $limpieza, $desinfeccion, $nombre, $choque, $pisos, $paredes, $estufas, $puertas, $puertas, $mesas, $sillas, $ventiladores, $techos, $observaciones, $id));
+    $resultado = $query->execute(array( $limpieza, $desinfeccion, $nombre, $choque, $pisos, $paredes, $estufas, $puertas, $mesas, $sillas, $techos, $observaciones, $id));
 
     if ($resultado) {
         $correcto = true;

@@ -11,11 +11,6 @@ $activo = 1;
 $comando = $con->prepare("SELECT * FROM tbllimpieza WHERE activo=:mi_activo ORDER BY id ASC");
 $comando->execute(['mi_activo' => $activo]);
 
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
-
-
-
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -201,11 +196,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
      </div>
 
      <div class="Limpieza">
-     <label for="ventiladores">Ventiladores</label>
-       <input type="text" id="ventiladores" name="ventiladores">
-     </div>
-
-     <div class="Limpieza">
      <label for="techos">Techos</label>
        <input type="text" id="techos" name="techos">
      </div>
@@ -215,9 +205,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
        <input type="text" id="observaciones" name="observaciones">
      </div>
 
-     <div class="Limpieza">
-
-    </div>
     <div class="botones5">
     <a class="btn btn-secondary" href="DocLimpieza.php">Regresar</a>
 <button type="submit" class="btn btn-primary" name="registro">Guardar</button>
