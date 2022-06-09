@@ -5,10 +5,17 @@ require 'conexion.php';
 $db = new Database();
 $con = $db->conectar();
 
+<<<<<<< HEAD
 $activo = 1;
 
 $comando = $con->prepare("SELECT * FROM tbllimpieza WHERE activo=:mi_activo ORDER BY id ASC");
 $comando->execute(['mi_activo' => $activo]);
+=======
+$comando = $con->prepare("SELECT * FROM tbllimpieza ");
+$comando = $con->prepare("SELECT * FROM tbllimpieza ");
+
+
+>>>>>>> 63703aad364289738651fa93ac7b631d1499dfba
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
