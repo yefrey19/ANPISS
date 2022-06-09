@@ -419,6 +419,7 @@ td
   border: none;
   margin-top: 15rem;
   margin-left: -50rem;
+  font-size: 2rem;
 }
     
 .search{
@@ -427,7 +428,7 @@ td
   
 }
     
-.search button{
+.search_button{
   background-color: #0074D9;
   color: #f2f2f2;
   float: right;

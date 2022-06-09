@@ -28,19 +28,12 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="busqueda">
         <div class="search">
-            <form action="#">
-                <input type="text"
-                    placeholder=" Search Courses"
-                    name="search">
-                <button>
-                    <i class="fa fa-search"
-                        style="font-size: 18px;">
-                    </i>
-                </button>
+            <form action="buscarusua.php" method="get" >
+                <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+                <input type="submit" value="Buscar" class="search_button">
             </form>
         </div>
     </div>
-    
        <a href="Principal.html" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="4" y1="6" x2="20" y2="6" />

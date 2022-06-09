@@ -13,7 +13,8 @@ $query->execute(['id' => $id, 'activo' => $activo]);
 $num = $query->rowCount();
 if ($num > 0) {
     $row = $query->fetch(PDO::FETCH_ASSOC);
-} else {
+}
+ else {
     header("Location: proveedores.php");
 }
 
@@ -74,7 +75,7 @@ if ($num > 0) {
 
                         <div class="col-md-4">
                             <label for="correo" class="form-label">Dirección</label>
-                            <input type="email" id="correo" name="direccion" value="<?php echo $row['direccion']; ?>" class="form-control">
+                            <input type="text" id="correo" name="direccion" value="<?php echo $row['direccion']; ?>" class="form-control">
                         </div>
 
                         <div class="col-md-4">

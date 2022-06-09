@@ -5,12 +5,10 @@ require 'conexion.php';
 $db = new Database();
 $con = $db->conectar();
 
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
+$activo = 1;
 
-<<<<<<< HEAD
-$comando = $con->prepare("SELECT * FROM tbllimpieza ");
-=======
->>>>>>> d4eecb60679e9be396e8e0a8d37bec0fbc7c3f73
+$comando = $con->prepare("SELECT * FROM tbllimpieza WHERE activo=:mi_activo ORDER BY id ASC");
+$comando->execute(['mi_activo' => $activo]);
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -62,7 +60,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
     
     <tr>
-        <th>N°</th>
         <th>Fecha</th>
         <th>Limpieza</th>
         <th>Desinfeccion</th>
@@ -76,7 +73,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <th>Sillas</th>
         <th>Techos</th>
         <th>Observaciones</th>
-        <th>Id</th>
         <th>opciones</th>
     </tr>
 
@@ -86,24 +82,20 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                             ?>
                                 <tr>
                                 
-                                    <td><?php echo $row['Fecha']; ?></td>
-                                    <td><?php echo $row['Limpieza']; ?></td>
-                                    <td><?php echo $row['Desinfecion']; ?></td>
-                                    <td><?php echo $row['Nombre del desinfeccion']; ?></td>
-                                    <td><?php echo $row['Choque de desinfecion']; ?></td>
-                                    <td><?php echo $row['Pisos']; ?></td>
-                                    <td><?php echo $row['Paredes']; ?></td>
-                                    <td><?php echo $row['Estufas']; ?></td>
-                                    <td><?php echo $row['Puertas']; ?></td>
-                                    <td><?php echo $row['Estufas']; ?></td>
-                                    <td><?php echo $row['Mesas']; ?></td>
-                                    <td><?php echo $row['Sillas']; ?></td>
+                                    <td><?php echo $row['fecha']; ?></td>
+                                    <td><?php echo $row['limpieza']; ?></td>
+                                    <td><?php echo $row['desinfeccion']; ?></td>
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td><?php echo $row['choque']; ?></td>
+                                    <td><?php echo $row['pisos']; ?></td>
+                                    <td><?php echo $row['paredes']; ?></td>
+                                    <td><?php echo $row['estufas']; ?></td>
+                                    <td><?php echo $row['puertas']; ?></td>
+                                    <td><?php echo $row['mesas']; ?></td>
+                                    <td><?php echo $row['sillas']; ?></td>
                                     <td><?php echo $row['techos']; ?></td>
-                                    <td><?php echo $row['Observaciones']; ?></td>
-                                    <td><?php echo $row['Id']; ?></td>
-                                    
-                                    
-                        
+                                    <td><?php echo $row['observaciones']; ?></td>
+                                
                                     <td><a href="ver.php?id=<?php echo $row['id']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                                         <circle cx="12" cy="12" r="2" />
@@ -115,7 +107,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                                                                                     <path d="M16 5l3 3" />
                                                                                     <path d="M9 7.07a7.002 7.002 0 0 0 1 13.93a7.002 7.002 0 0 0 6.929 -5.999" />
                                                                                     </svg>
-                                  
+                                  </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -142,13 +134,13 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <a href="reportelimpiezacocina.html"><button>Reporte en PDF</button></a>
 </div>
 
-<form  method="POST" action="guarda.php" autocomplete="off">
+<form  method="POST" action="guardarLim.php" autocomplete="off">
 <div class="modal2"> 
     <div class="modal3">
     <div class="titulo"> 
         <div class="Limpieza">
        <label for="fecha">Fecha</label>
-       <input type="text" id="fecha" name="fecha">
+       <input type="date" id="fecha" name="fecha">
     </div>
 
     <div class="Limpieza">
@@ -163,12 +155,12 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
      <div class="Limpieza">
      <label for="nombre del desinfectante">Nombre del desinfectante</label>
-       <input type="text" id="nombre del desinfectante" name="nombre del desinfectante">
+       <input type="text" id="nombre del desinfectante" name="nombre">
      </div>
 
      <div class="Limpieza">
      <label for="choque de desinfeccion">Choque de desinfeccion</label>
-       <input type="text" id="choque de desinfecicon" name="choque de desinfeccion">
+       <input type="text" id="choque de desinfecicon" name="choque">
      </div>
 
      <div class="Limpieza">
@@ -217,9 +209,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
      </div>
 
      <div class="Limpieza">
-     <label for="id">Id</label>
-       <input type="text" id="id" name="id">
-     </div>
 
     </div>
     <div class="botones5">

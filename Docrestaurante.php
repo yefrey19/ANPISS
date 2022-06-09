@@ -5,33 +5,32 @@ require 'conexion.php';
 $db = new Database();
 $con = $db->conectar();
 
-<<<<<<< HEAD
+
 $activo = 1;
 
 $comando = $con->prepare ("SELECT * FROM tblrestaurante WHERE activo=:mi_activo ORDER BY id ASC");
 $comando->execute(['mi_activo' => $activo]);
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
-?>
-=======
+
 $comando = $con->prepare("SELECT * FROM tbllimpieza ");
 
 $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
+
 ?>
 
->>>>>>> 1e6ccd9d813e124a415dc80ac97c5cb44eec4ec2
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+
     <title>Restaurante</title>
-=======
+
     <title>Document</title>
->>>>>>> 1e6ccd9d813e124a415dc80ac97c5cb44eec4ec2
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/Doc.css" rel="stylesheet">
     <link rel="preload" href="css/normalize.css" as="styles">
@@ -51,8 +50,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
             </form>
         </div>
     </div>
-    
-<<<<<<< HEAD
+
     <a href="iniciodoc.html" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <line x1="4" y1="6" x2="20" y2="6" />
@@ -67,7 +65,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 
     <table>
     <tr>
-=======
+
        <a href="iniciodoc.html" target="Anpiss"><svg xmlns="http://www.w3.org/2000/svg" class=" log-usua icon icon-tabler icon-tabler-text-wrap" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="4" y1="6" x2="20" y2="6" />
@@ -87,7 +85,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
     
     <tr>
         <th>N°</th>
->>>>>>> 1e6ccd9d813e124a415dc80ac97c5cb44eec4ec2
         <th>Fecha</th>
         <th>Limpieza</th>
         <th>Desinfeccion</th>
@@ -95,7 +92,6 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
         <th>Choque de desinfeccion</th>
         <th>Pisos</th>
         <th>Paredes</th>
-<<<<<<< HEAD
         <th>Puertas</th>
         <th>Mesas</th>
         <th>Sillas</th>
@@ -233,7 +229,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
     <script src="javascript/modal2.js"></script>
 </body>
 </html>
-=======
+
         <th>Estufas</th>
         <th>Campanas</th>
         <th>Neveras</th>
@@ -373,4 +369,4 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 <script src="javascript/modallimpieza.js"></script>
 </body>
 </html>
->>>>>>> 1e6ccd9d813e124a415dc80ac97c5cb44eec4ec2
+

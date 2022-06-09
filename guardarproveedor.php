@@ -13,7 +13,7 @@ if (isset($_POST['id'])) {
     $nombre = $_POST['nombre'];
     $direccion = $_POST['direccion'];
     $correo = $_POST['correo'];
-    $correo = $_POST['telefono'];
+    $telefono = $_POST['telefono'];
 
     $query = $con->prepare("UPDATE tblproveedor SET nombre=?, direccion=?, correo=?, telefono=? WHERE id=?");
     $resultado = $query->execute(array($nombre,  $direccion, $correo, $telefono,  $id));
@@ -23,12 +23,12 @@ if (isset($_POST['id'])) {
     }
 } else {
     $nombre = $_POST['nombre'];
-    $documento = $_POST['direccion'];
+    $direccion = $_POST['direccion'];
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
     $query = $con->prepare("INSERT INTO tblproveedor (nombre,  direccion, correo, telefono,  activo) VALUES (:nom, :dir, :cor, :tel, 1)");
-    $resultado = $query->execute(array('nom' => $nombre,'dir' => $documento,'cor' => $correo, 'tel' => $telefono, ));
+    $resultado = $query->execute(array('nom' => $nombre,'dir' => $direccion,'cor' => $correo, 'tel' => $telefono, ));
 
     if ($resultado) {
         $correcto = true;
