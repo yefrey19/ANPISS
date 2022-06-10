@@ -35,15 +35,9 @@ if ($num > 0) {
 <body>
     <div class="busqueda">
         <div class="search">
-            <form action="#">
-                <input type="text"
-                    placeholder=" Search Courses"
-                    name="search">
-                <button>
-                    <i class="fa fa-search"
-                        style="font-size: 18px;">
-                    </i>
-                </button>
+            <form role="form" action="buscarusua.php" method="POST" >
+                <input type="text" name="buscar" id="busqueda" placeholder="Buscar">
+                <button type="submit" value="Buscar" class="search_button">Buscar</button>
             </form>
         </div>
     </div>
@@ -66,7 +60,7 @@ if ($num > 0) {
                 <div class="col">
                     <form class="row g-3" method="POST" action="" autocomplete="off">
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-                        <div class="">
+                        <div>
                             <h2 id="codigo" name="nombre">Nombres y Apellidos: <?php echo $row['nombre']; ?> <?php echo $row['apellido']; ?></h2>
                         </div>
 

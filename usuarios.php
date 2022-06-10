@@ -28,9 +28,9 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="busqueda">
         <div class="search">
-            <form action="buscarusua.php" method="get" >
-                <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
-                <input type="submit" value="Buscar" class="search_button">
+            <form role="form" action="buscarusua.php" method="POST" >
+                <input type="text" name="buscar" id="busqueda" placeholder="Buscar">
+                <button type="submit" value="Buscar" class="search_button">Buscar</button>
             </form>
         </div>
     </div>
