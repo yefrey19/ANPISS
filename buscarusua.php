@@ -6,7 +6,7 @@ if ($_POST){
         $db = new Database();
         $con = $db->conectar();
         $id = $_POST['buscar'];
-        $SQL = "SELECT id, nombre, apellido, documento, correo, telefono, edad, cargo from tblusuario WHERE nombre = :nom";
+        $SQL = "SELECT id, nombre,apellido, documento, correo, telefono, edad, cargo from tblusuario WHERE nombre = :nom";
         $stmt = $con -> prepare($SQL);
         $result = $stmt -> execute (array(':nom' => $id));
         $rows = $stmt ->fetchAll(\PDO::FETCH_OBJ);
@@ -31,7 +31,7 @@ if ($_POST){
 <div class="busqueda">
         <div class="search">
             <form role="form" action="buscarusua.php" method="POST">
-                <input type="text" name="buscar" id="busqueda" placeholder="Buscar" required>
+                <input type="text" name="buscar" id="busqueda" placeholder="Buscar informacion" required>
                 <button type="submit" value="Buscar" class="search_button">Buscar</button>
             </form>
         </div>
@@ -55,10 +55,16 @@ if ($_POST){
                     <div class="row row-1">
                     <div class="col">
                         <form class="row g-3" action="guarda.php">
-                            <h2><?php print("Nombres y Apellidos: ".$rows->nombre." ".$rows->apellido)?></h2>
-
-                                <div class="col-md-12 col-1">
-                                    <a class="btn btn-secondary btn-1" href="editar.php?id=<?php print(".$rows->id") ?>">Editar</a>
+                            <h2><?php print("Nombres y Apellidos: ".$rows->nombre." ".$rows->apellido. "<br>")?></h2>
+                            <h2><?php print("Documento:  " .$rows->documento. "<br>") ?></h2>
+                            <h2><?php print("Correo:  " .$rows->correo. "<br>") ?></h2>
+                            <h2><?php print("Telefono:  " .$rows->telefono. "<br>") ?></h2>
+                            <h2><?php print("Edad:  " .$rows->edad. "<br>") ?></h2>
+                            <h2><?php print("Cargo:  " .$rows->cargo. "<br>") ?></h2>
+                                <div class="col-md-12 col-111">
+                                    <a class="btn btn-secondary btn-1" href="editar.php?id=<?php print("$rows->id") ?>">Editar</a>
+                                    <a class="btn btn-secondary btn-1" href="eliminar.php?id=<?php print("$rows->id") ?>">Eliminar</a>
+                                    <a class="btn btn-secondary" href="usuarios.php">Regresar</a>
                                 </div>
                         </form>
                     </div>
@@ -69,17 +75,8 @@ if ($_POST){
             <?php
             }
         }else{
-            echo "<script> alert('Valor no valido.');window.location= 'usuarios.php' </script>";
+            echo "<script> alert('Valor no valido o usuario no registrado.');window.location= 'usuarios.php' </script>";
         }
     }
 
 ?>
-
-                                    <a href="eliminar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="25" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                                        <line x1="4" y1="7" x2="20" y2="7" />
-                                                                                        <line x1="10" y1="11" x2="10" y2="17" />
-                                                                                        <line x1="14" y1="11" x2="14" y2="17" />
-                                                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                                        </svg></a></td>

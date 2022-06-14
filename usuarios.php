@@ -29,7 +29,7 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
     <div class="busqueda">
         <div class="search">
             <form role="form" action="buscarusua.php" method="POST" >
-                <input type="text" name="buscar" id="busqueda" placeholder="Buscar">
+                <input type="text" name="buscar" id="busqueda" placeholder="Buscar informacion por identificacion">
                 <button type="submit" value="Buscar" class="search_button">Buscar</button>
             </form>
         </div>
@@ -49,12 +49,14 @@ $resultado = $comando->fetchAll(PDO::FETCH_ASSOC);
                         <div class="colum-2">
                             <a href="registrarusu.html" class="btn boton btn-primary aling">Nuevo Usuario</a>
                             <a href="empleado.php" class="btn boton btn-primary aling" >Empleado</a>
+                            <a href="reporteusuario.php" class="btn boton btn-primary aling" >Reporte PDF</a>
                         </div>
                 </div>
             </div>
 
             <div class="row py-3">
                 <div class="col">
+                
                     <table >
                         <thead>
                             <tr>

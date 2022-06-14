@@ -1,5 +1,3 @@
-
-
 .contenedor {
     margin-top: 5rem;
 }
@@ -69,4 +67,8 @@ h4{
 
 .col-1{
     margin-left: 18rem;
+}
+
+.col-111{
+    margin-left: 12rem;
 }
